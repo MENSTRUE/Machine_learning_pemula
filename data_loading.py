@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from tensorflow.python.ops.gen_array_ops import lower_bound
 
 train = pd.read_csv("dataset/Bawang Merah.csv")
 train.head()
@@ -108,3 +109,11 @@ for feature in numeric_feactures:
     sns.boxplot(x=df[feature])
     plt.title(f'Box plot of {feature} - AFTER')
     plt.show()
+
+# pro tips
+# median = df['column_name'].median()
+# df['column_name'] = df['column_name'].apply(lambda x: median if x < (Q1 - 1.5 IQR) or x > (Q3 + 1.5 IQR) else x)
+#
+# # mengganti outliers dengan nilai batas terdekat
+# df['column_name'] = df['column_name'].apply(lambda x: (Q1 - 1.5 IQR) if x < lower_bound else (Q3 + 1.5 IQR) if x > (Q3 + 1.5 * IQR) else x)
+
