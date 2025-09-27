@@ -88,3 +88,4 @@ accuracy_rf = evaluate_model(x_important, x_test_important, y_train, y_test, rf_
 print(f"\nAkurasi Model dengan Filter Methods: {accuracy_filter:.2f}")
 print(f"Akurasi Model dengan Wrapper Methods: {accuracy_rfe:.2f}")
 print(f"Akurasi Model dengan Embedded Methods: {accuracy_rf:.2f}")
+
